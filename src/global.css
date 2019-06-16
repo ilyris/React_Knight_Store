@@ -1,0 +1,681 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster|Montserrat|Oswald");
+
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #010101;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+    color: #fff;
+    font-size: 10px;
+}
+
+ li {
+     list-style: none;
+ }
+ a {
+     text-decoration: none;
+ }
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+a {
+    margin: 0;
+    padding: 0;
+}
+/* Navigation Menu */
+#mainHeader {
+    width: 100%;
+    z-index: 10;
+    background: #fff;
+    top: 0;
+}
+#navigationWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+#navWrapper {
+    height: 70px;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    display: flex;
+}
+#mainNavigation {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    background: #fff;
+}
+#mainNavigation.sticky {
+    position: fixed;
+    background: #fff;
+    top: 0;
+    z-index: 10;
+}
+.mainLi {
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.searchBarItem {
+    padding: 20px;
+    transition: all ease-in-out 120ms;
+    display: flex;
+}
+.mainLi:hover {
+    background: #d5d5d5;
+}
+.mainLi:hover .mainLinks {
+    color: #000;
+}
+
+.mainLinks {
+    color: #b27300;
+    font-size: 2rem;
+    transition: all ease-in-out 120ms;
+    font-weight: 400;
+    position: relative;
+}
+#mainSearchLink,
+#shoppingCart {
+    font-size: 2rem;
+    transition: all ease-in-out 120ms;
+    position: relative;
+    color: #000;
+    display: flex !important;
+    align-items: center;
+}
+.searchBarItem:hover {
+    background-color: #b27300;
+    cursor: pointer;
+}
+.searchBarItem.activeState {
+    background-color: #b27300;
+    border-bottom: 3px solid #d8d7d7;
+}
+.searchBarItem.activeState #mainSearchLink {
+    color: #fff;
+}
+#logoWrapper {
+    padding: 25px;
+    width: 100%;
+    text-align: center;
+    background-color: #000;
+    padding: 10px 0 10px 0;
+}
+.logo {
+    color: #fff;
+    font-family: "Lobster", cursive;
+    transition: all ease-in-out 200ms;
+    font-size: 6rem;
+    letter-spacing: 1px;
+}
+.logo:hover {
+    color: #b27300;
+}
+#subMenuWrapper {
+    opacity: 0;
+    position: absolute;
+    background: #d8d7d7;
+    transition: all ease-in-out 100ms;
+    visibility: hidden;
+    right: 0;
+    justify-content: center;
+    left: 0;
+    top: 99%;
+    width: 100%;
+    padding: 25px;
+    z-index: 10;
+}
+#subMenuTitle {
+    color: #000;
+    text-align: center;
+    font-size: 4rem;
+    padding-bottom: 20px;
+    font-family: "Lobster", cursive;
+    letter-spacing: 1px;
+}
+#subMenu {
+    display: flex;
+    justify-content: center;
+}
+#rowWatchContainerWrapper {
+    display: flex;
+    flex-direction: column;
+}
+.rowWatchContainer {
+    display: flex;
+}
+.dropDownParent:hover > #subMenuWrapper {
+    visibility: visible;
+    opacity: 100;
+}
+.subLis {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+.subLinks {
+    font-size: 2rem;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all ease-in-out 200ms;
+}
+.subLinks:hover {
+    opacity: 0.8;
+}
+img {
+    width: 100px;
+    height: 150px;
+}
+.categorySection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-left: 2px solid black;
+}
+
+.categoryImageLink {
+    transition: all ease-in-out 200ms;
+    margin-left: 25px;
+}
+.categoryImageLink.mens {
+    margin-bottom: 15px;
+}
+.categoryImageLink:hover {
+    transform: scale(1.05);
+}
+.categoryImage {
+    background: url(landingPageBG2.png);
+    background-position: center;
+    display: flex;
+    width: 350px;
+    height: 175px;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+    color: #fff;
+}
+/* Scroll to top button */
+.top-scroll-container {
+    position: fixed;
+    bottom: 0;
+    display: none;
+    justify-content: flex-end;
+    width: 50px;
+    right: 0;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 0 10px 10px 0;
+    z-index: 1000000;
+}
+.top-scroll-container.active {
+    display: flex;
+}
+.scroll-to-top-link {
+    text-decoration: none;
+    color: #000;
+    transition: all ease-in-out 400ms;
+}
+
+.scroll-to-top-link:hover {
+    transform: scale(1.1);
+}
+
+.scroll-to-top-link:hover .scroll-to-top-button-container {
+    box-shadow: 0px 3px 10px 0px rgb(54, 54, 54);
+}
+
+.scroll-to-top-button-container {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 40px;
+    width: 50px;
+    max-height: 50px;
+    overflow: hidden;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    transition: all ease-in-out 400ms;
+}
+
+.scroll-to-top-button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all ease-in-out 400ms;
+    border-radius: 40px;
+}
+
+.scroll-to-top-button {
+    transform: translateY(15px);
+}
+
+.scroll-to-top-button i {
+    font-size: 22px;
+}
+
+.scroll-to-top-text {
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+    transform: translateY(28px);
+    width: 100;
+}
+
+.scroll-to-top-link:hover .scroll-to-top-button {
+    transform: translateY(-40px)
+}
+
+/* Landing Page */
+#landingCard {
+    height: 75vh;
+    width: 100%;
+    background: url(landingPageBG2.png);
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+#searchContainer {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    background-color: #b17200;
+    padding: 25px;
+    transition: all ease-in-out 400ms;
+    opacity: 0;
+    left: 0;
+    top: 100%;
+}
+#searchContainer.on {
+    opacity: 100;
+    visibility: visible;
+}
+#searchForm {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#searchBar {
+    font-size: 2.4rem;
+    border: 0;
+    padding: 10px 10px 10px 20px;
+    width: 70%;
+    border-radius: 25px;
+    background-color: #d5d5d5;
+    outline-width: 0;
+}
+#clearSearchBarButton {
+    position: relative;
+    right: 90px;
+    display: flex;
+    align-items: center;
+}
+#clearSearchBarButton i {
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all ease-in-out 220ms;
+    color: #000;
+}
+#clearSearchBarButton:hover i {
+    color: #b17200;
+}
+#searchButton {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    cursor: pointer;
+    right: 75px;
+    border: none;
+    background: none;
+    outline: none;
+}
+#searchIcon {
+    font-size: 2.4rem;
+    transition: all ease-in-out 220ms;
+    color: #000;
+}
+#searchIcon:hover {
+    color: #b27300;
+}
+.home-page-watch {
+    background: url(watch3.png);
+    background-size: contain;
+    min-width: 200px;
+    min-height: 400px;
+    background-repeat: no-repeat;
+    animation-delay: 1500ms;
+    margin-left: 50px;
+}
+.welcomeTextContainer {
+    width: 500px;
+    margin-bottom: 150px;
+}
+#landingTextWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+}
+.knight-watches-title {
+    font-size: 5rem;
+    color: #b27300;
+    margin: 0;
+    animation-duration: 1s;
+    padding-bottom: 20px;
+}
+
+.knight-watches-title::After {
+    content: '\00a9';
+    font-size: 1.4rem;
+    position: absolute;
+}
+
+.card-1-text-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.main-header {
+    font-size: 35rem;
+    color: #4342422e;
+}
+.card-1-text-container-paragraph {
+    font-size: 2.4rem;
+    padding-bottom: 20px;
+}
+
+.shop-now-button {
+    animation-duration: 1500ms;
+    animation-delay: 1s;
+    padding-top: 20px;
+}
+
+.shop-now {
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 2rem;
+    background: #b27300;
+    color: #101010;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 300ms ease-in-out;
+}
+
+.shop-now:hover {
+    color: #fff;
+}
+
+.shop-now:hover::after {
+    color: #fff;
+}
+
+.fa-arrow-right {
+    padding-left: 10px;
+}
+
+/* The Fold Section */
+#theFold {
+    background-color: #d8d7d7;
+}
+#ourSeriesWrapper {
+    padding-bottom: 40px;
+}
+#ourSeriesTitleWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+.generalTitle {
+    font-size: 1.6rem;
+    color: #000;
+    padding-bottom: 5px;
+}
+.specificTitle {
+    font-size: 8rem;
+    font-family: lobster;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #000000;
+}
+.listOfSeries {
+    display: flex;
+    justify-content: center;
+}
+#ourSeriesWrapper .subLinks {
+    padding: 10px 25px;
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+}
+#ourSeriesWrapper .subLinks img {
+    width: 200px;
+    height: 300px;
+    padding-bottom: 25px;
+}
+/* About Watches Section */
+#showcaseProject #ourSeriesTitleWrapper .generalTitle,
+#showcaseProject #ourSeriesTitleWrapper .specificTitle {
+    color: #fff;
+}
+
+.watchContainer {
+    display: flex;
+    
+}
+.watchContainer:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.aboutWatchText {
+    opacity: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+.watchtitle {
+    font-size: 4rem;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #b17200;
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+}
+.watchText {
+    letter-spacing: 3px;
+    font-size: 2rem;
+    text-align: justify;
+    width: 80%;
+}
+.watchImageContainer {
+    opacity: 0;
+    width: 50%;
+    overflow: hidden;
+}
+.watchImageContainer img {
+    width: 100%;
+    height: 100%;
+    transition: all ease-in-out 600ms;
+}
+.watchImageContainer:hover img {
+    transform: scale(1.2);
+}
+.discoverButtonContainer {
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.discoverButton {
+    padding: 15px 30px;
+    border: 2px solid #fff;
+    font-size: 2rem;
+    color: #fff;
+    transition: all ease-in-out 200ms;
+}
+.discoverButton:hover {
+    background: #b17200;
+}
+/* Gender Selection Section */
+#moreSection {
+    padding-top: 100px;
+}
+#moreContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.MoreInfoContainer {
+    flex-basis: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.MoreInfoContainer img {
+    height: 90%;
+    width: 100%;
+}
+.MoreInfoContainerTitle {
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    margin: 0 auto;
+}
+.MoreInfoContainerTitle:hover {
+    border-bottom: 2px solid #fff;
+}
+/* Footer */
+#footer {
+    width: 100%;
+    height: 400px;
+}
+
+#mainFooter {
+    width: 100%;
+    display: flex;
+    padding: 150px 0 0 0;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#mainFooter .footerLinks {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #1d1d1d;
+}
+
+#mainFooter .footerLinks li {
+    list-style: none;
+    transition: all ease 300ms;
+}
+
+#mainFooter .footerLinks li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+#mainFooter .footerLinks li a:hover {
+    text-decoration: underline;
+    color: #d8d7d7;
+}
+
+.company-icons i {
+    font-size: 30px;
+    display: flex;
+    color: white;
+    transition: all ease 300ms;
+}
+
+
+#mainFooter .company-icons {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.company-icons li {
+    list-style: none;
+    padding-right: 5px;
+}
+
+.company-icons li a {
+    text-decoration: none;
+}
+#mainFooter #logoWrapper {
+    padding-bottom: 40px;
+}
+.icon-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 30px;
+    transition: all ease 300ms;
+}
+
+.icon-container:hover {
+    background-color: #fff;
+}
+
+.icon-container:hover i {
+    color: #b17200;
+}
+
+.footerLinks li a i {
+    padding-right: 10px;
+}
+
+.copyright {
+    color: #fff;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.copyright p {
+    margin: 0;
+}
